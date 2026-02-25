@@ -1,8 +1,10 @@
 class Record:
-    def __init__(self, record_id: int, name: str, age: int):
-        self.record_id = record_id
+    def __init__(self, name):
+        if not name:
+            raise ValueError("Name cannot be empty")
         self.name = name
-        self.age = age
 
-    def __repr__(self):
-        return f"Record(ID={self.record_id}, Name={self.name}, Age={self.age})"
+    def update_name(self, new_name):
+        if not new_name:
+            raise ValueError("New name cannot be empty")
+        self.name = new_name
