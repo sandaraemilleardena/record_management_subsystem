@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    background: #f1f5f9;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #1e293b, #0f172a);
+    color: white;
+    padding: 30px 20px;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 40px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header p {
+    color: #64748b;
+}
+
+/* Card */
+.card {
+    margin-top: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Form */
+.form-section {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.form-section input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+}
+
+.form-section button {
+    padding: 12px 20px;
+    background: #2563eb;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-section button:hover {
+    background: #1d4ed8;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    background: #f8fafc;
+}
+
+td {
+    padding: 12px;
+    border-top: 1px solid #e2e8f0;
+}
+
+button.edit {
+    background: #f59e0b;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+button.delete {
+    background: #ef4444;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}

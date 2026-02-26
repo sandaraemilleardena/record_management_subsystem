@@ -1,66 +1,122 @@
 # Record Management Subsystem
 
-## Project Overview
 
-The Record Management Subsystem is a Python-based application that allows users to manage records efficiently.  
+# Project Overview
 
-It supports adding, updating, deleting, and searching records while ensuring proper validation and preventing duplicate IDs.
+The Record Management Subsystem is a Python-based application that allows users to manage records efficiently.
 
-This project includes automated testing using Pytest and coverage reporting as required in SE102.
+It supports:
 
----
+Adding records
+
+Updating records
+
+Deleting records
+
+Searching records
+
+Preventing duplicate IDs
+
+Input validation
+
+The system includes:
+
+Backend logic written in Python
+
+SQLite database integration
+
+Automated testing using Pytest
+
+Coverage reporting
+
+A Web-Based Dashboard UI using HTML, Bootstrap (CSS), and script functionality
 
 ## Project Structure
 record_management_subsystem/
 │
 ├── app/
-│ ├── record.py
-│ ├── record_manager.py
-│ └── record_validator.py
+│   ├── record.py
+│   ├── record_manager.py
+│   ├── record_validator.py
+│   ├── static/
+│   └── templates/
+│       └── dashboard.html
 │
 ├── tests/
-│ └── test_record.py
+│   └── test_record.py
 │
-├── README.md
+├── app.py
+├── records.db
 ├── requirements.txt
-└── .gitignore
+└── README.md
 
 ---
 
-## ⚙️ Features
+## Features
 
-✔ Add record  
-✔ Delete record  
-✔ Update record  
-✔ Search record  
-✔ Input validation  
-✔ Prevent duplicate ID  
-✔ Automated unit testing  
-✔ Coverage report generation  
+Add record
+Delete record
+Update record
+Search record
+Input validation
+Prevent duplicate ID
+Automated unit testing
+Coverage report generation
+Web-based dashboard interface
+Bootstrap responsive UI 
 
 ---
 
 ## System Components
 
-### Record (record.py)
+1. Record (record.py)
+
 Represents a single record containing:
-- record_id
-- name
-- age
 
-### RecordValidator (record_validator.py)
+record_id
+name
+age
+
+Raises ValueError for invalid input.
+
+2️. RecordValidator (record_validator.py)
+
 Validates:
-- ID must be integer and not None
-- Name must not be empty
-- Age must be integer and non-negative
+ID must be integer and not None
+Name must not be empty or whitespace
+Age must be integer and non-negative
 
-### RecordManager (record_manager.py)
+3️. RecordManager (record_manager.py)
+
 Handles:
-- Adding records
-- Searching records
-- Updating records
-- Deleting records
-- Duplicate ID prevention
+
+Adding records
+Updating records
+Deleting records
+Searching records
+Retrieving all records
+Duplicate ID prevention
+Database interaction (SQLite)
+
+## Web Dashboard
+
+The system includes a web-based dashboard interface built using:
+
+HTML5
+Bootstrap 5 (CSS Framework)
+Basic JavaScript confirmation
+Flask templating (Jinja2)
+Dashboard Capabilities
+
+Add Record Form
+Update Record Form
+Search Record Form
+Display All Records in Table
+Delete Button with Confirmation
+Flash Message Notifications
+Responsive Layout
+
+The dashboard provides a user-friendly interface to interact with the backend Record Management System.
 
 ---
 
@@ -77,9 +133,9 @@ rootdir: D:\Acer\Desktop\record_management_subsystem
 plugins: cov-7.0.0
 collected 8 items
 
-app\tests\test_record py ........                                                         [100%]
+app\tests\test_record.py ........                                                                [100%]
 
-===== 8 passed in 0.07s ============
+===== 8 passed in 0.13s ============
 
 
 ---
@@ -90,16 +146,17 @@ Generate coverage report:
 py -m pytest --cov=app
 Expected Coverage:
 ================= tests coverage ================
-___ coverage: platform win32, python 3.14.3-final-0 ____
+___ coverage: platform win32, python 3.14.3-final-0 __________________ 
 
 Name                       Stmts   Miss  Cover
 ----------------------------------------------
+app\__init__.py                0      0   100%
 app\record.py                  9      1    89%
-app\record_manager.py         22      1    95%
-app\record_validator.py        6      0   100%
+app\record_manager.py         18      1    94%
+app\record_validator.py       18     10    44%
 app\tests\test_record.py      37      0   100%
 ----------------------------------------------
-TOTAL                         74      2    97%
+TOTAL                         82     12    85%
 ============= 8 passed in 0.22s ==================
 
 
@@ -108,8 +165,12 @@ TOTAL                         74      2    97%
 ## Technologies Used
 
 - Python 3
+- SQLite
 - Pytest
 - Pytest-Cov
+- HTML5
+- Bootstrap 5
+- JavaScript
 - Git
 - GitHub
 - Visual Studio Code
@@ -125,11 +186,3 @@ Course: SE102
 Project: Record Management Subsystem  
 
 ---
-
-## Submission Status
-
-✔ All required features implemented  
-✔ All tests passed (8/8)  
-✔ Coverage above 95%  
-✔ Uploaded to GitHub  
-✔ Ready for submission  

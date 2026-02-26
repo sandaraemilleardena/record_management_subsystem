@@ -1,27 +1,23 @@
-from app.record import Record
-from app.record_validator import validate_name
-
-
 class RecordManager:
     def __init__(self):
         self.records = []
 
     def add_record(self, name):
+        from app.record_validator import validate_name
+
         if not validate_name(name):
             return False
-        record = Record(name)
-        self.records.append(record)
+
+        self.records.append(name)
         return True
 
     def delete_record(self, name):
-        for record in self.records:
-            if record.name == name:
-                self.records.remove(record)
-                return True
+        if name in self.records:
+            self.records.remove(name)
+            return True
         return False
 
     def search_record(self, name):
-        for record in self.records:
-            if record.name == name:
-                return record
+        if name in self.records:
+            return name
         return None
