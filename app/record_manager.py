@@ -21,3 +21,6 @@ class RecordManager:
         if name in self.records:
             return name
         return None
+
+    def get_all_records(self):   
+        return self.records
